@@ -1,15 +1,10 @@
-import {connect} from "react-redux";
+import {useSelector} from "react-redux";
 
-const CounterOutput = (props) => {
+const CounterOutput = () => {
+    const value = useSelector(state => state.counter.counter);
     return (
-        <h3>Current Counter: {props.value}</h3>
+        <h3>Current Counter: {value}</h3>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        value: state.counter.counter
-    }
-}
-
-export default connect(mapStateToProps, null)(CounterOutput);
+export default CounterOutput;
