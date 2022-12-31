@@ -2,16 +2,16 @@ import React from "react";
 import {useDispatch} from "react-redux";
 
 import ChildA from "./ChildA";
-import {onChangeFirstName, onChangeLastName} from "../../store/actions/userInfoAction";
+import {setFirstName, setLastName} from "../../store/reducers/userInfoSlice";
 
 function Parent() {
     const dispatch = useDispatch();
     const onSetFirstName = (e) => {
-        dispatch(onChangeFirstName(e.target.value))
+        dispatch(setFirstName(e.target.value))
     }
 
     const onSetLastName = (e) => {
-        dispatch(onChangeLastName(e.target.value))
+        dispatch(setLastName(e.target.value))
     }
 
     return (
